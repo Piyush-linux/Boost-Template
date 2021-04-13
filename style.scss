@@ -1,0 +1,213 @@
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400;700&family=Montserrat:wght@900&display=swap');
+$f1:Montserrat;
+$f2:Monda;
+// Color: 
+$c1:#1abc9c;
+$c2:#3498db;
+.bg-purple{    background-color:#9b59b6}
+.bg-Dblue{    background-color:#2980b9}
+.bg-blue{    background-color:#3498db}
+.bg-Lblue{    background-color:#48dbfb}
+// Media
+/* Larger than mobile */
+@mixin mobile{
+    @media (max-width: 420px) {
+        @content;
+    }
+}
+
+/* Larger than phablet */
+// @media (min-width: 550px) {}
+
+/* Larger than tablet */
+// @media (min-width: 750px) {}
+
+/* Larger than desktop */
+// @media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+// @media (min-width: 1200px) {}
+html{
+    @include mobile(){
+        font-size: 8px;
+    }
+}
+body {
+    margin: 0;
+    padding: 0;
+
+}
+hr{
+    height:2px;
+    width: 80%;
+    background-color:#323030;
+    opacity: .8;
+}
+%center{
+    display:flex;
+    justify-content:center;
+}
+
+// HTML
+.hero {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(151, 94, 214);
+    background: linear-gradient(90deg, rgba(151, 94, 214, 1) 9%, rgba(52, 152, 219, 1) 52%, rgba(72, 219, 251, 1) 93%);
+
+    .column {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        /*margin: 0 auto;*/
+        color: white;
+        font-family: $f2;
+    }
+
+    h1 {
+        font-family: $f1;
+        font-weight: bolder;
+        font-size: 7rem;
+    }
+    h3 {
+        font-weight: lighter;
+        font-size: 3rem;
+    }
+    .button {
+        background-color: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        font-size: 1.05rem;
+        font-family: $f1;
+        font-weight: bold;
+        width: 15rem;
+    }
+}
+
+// about
+.about{
+
+    text-align:center;
+    // display:flex;
+    // flex-direction: column;
+    // align-items: center;
+    h1{
+        margin-top: 2rem;
+        font-family: $f1;
+        font-size: 3rem;
+    }
+    p{
+        font-family: $f2;
+        font-weight: bold;
+        width: 70%;
+        margin: 0 auto;
+        @include mobile(){
+            width: 100%;
+        }
+        margin-bottom: 2rem;
+    }
+}
+.offer{
+    background-color:white;
+    text-align:center;
+
+    h1{
+       padding-top: 2rem;
+       font-family: $f1;
+       font-size: 3rem;
+    }
+    p{
+        font-family: $f2
+    }
+    .row{
+    margin:2rem auto;
+                @include mobile(){
+        display:flex;
+        justify-content:center;
+        flex-direction: column;
+        align-items: center;
+    }
+        .column{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:center;
+            height:15vw;
+            color:white;
+            margin:1rem;
+            font-family: $f2;
+            .icon{
+                padding:.5em;
+                margin:1rem;
+            }
+            @include mobile(){
+                height:auto;
+                width: 80%;
+                padding:2rem;
+            }
+        }
+        padding-bottom: 2rem;
+    }
+}
+// gallery
+.gallery{
+    text-align:center;
+    // margin:1rem;
+    padding-bottom: 5rem;
+    h1{
+        font-family: $f1;
+        letter-spacing: 2px;
+    }
+    p{
+        font-family: $f2;
+        font-weight:bolder;
+    }
+    .row{
+        margin-top: 1rem;
+    }
+}
+// footer
+.footer{
+    text-align:center;
+    font-family: $f2;
+    padding-bottom: 5rem;
+    a{color:$c1;}
+    .row{
+        display:flex;
+        justify-content:center;
+        margin-bottom: 2rem;
+         @include mobile(){
+            flex-direction: row;
+        }
+    }
+    .icon{
+        height:7rem;
+        width: 7rem;
+        padding:1rem;
+        // background-color: $c1;
+        margin: auto 2rem;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content:center;
+        transition: .4s;
+        font-weight: bolder;
+        .iconify{
+            font-size: 3rem;
+            color:$c1;
+        }
+        &:hover{
+            background-color:$c1;
+            .iconify{
+                color:#fff;
+            }
+            transition: .4s;
+        }
+
+    }
+
+}
